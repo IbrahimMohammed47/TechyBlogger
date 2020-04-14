@@ -1,4 +1,4 @@
-const dataLoader = require('dataLoader')
+const dataLoader = require('dataloader')
 const _ = require('lodash')
 const { Account, Article, Author, Viewer, Collection } = require('../models')
 const { projector } = require('../utils/index')

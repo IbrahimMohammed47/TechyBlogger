@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { Account, Viewer, Author, Article, Collection } = require('./api/models/index')
+const { Account, Viewer, Author, Article, Collection } = require('./graphql/models/index')
 
 mongoose
   .connect(MONGO_URI, {

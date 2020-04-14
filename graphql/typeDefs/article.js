@@ -3,11 +3,11 @@ const { gql } = require('apollo-server-express')
 const Article = gql`
   extend type Query {
     article(articleId: MongoObjectId!): Article!
-    articles: [Article!]!
+    articles(filter: ArticleFilters, lastId:MongoObjectId, pageSize: Int, pageNumber: Int): [Article!]!
   }
   type Article {
     id: MongoObjectId!
-    title: String
+    title:String 
     body: String
     rate: Float!
     author: Author!
@@ -20,6 +20,11 @@ const Article = gql`
   type Comment {
     text: String
     viewer: Viewer!
+  }
+  input ArticleFilters {
+    title: StringFilterInput
+    createdAt: DateFilterInput
+    rate: FloatFilterInput
   }
 `
 
