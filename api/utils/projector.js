@@ -3,9 +3,11 @@
 */
 
 const graphqlFields = require('graphql-fields')
+
 const fields = info => {
   return graphqlFields(info, {}, { excludedFields: ['__typename'] })
 }
+
 const descriptor = (node, i = 0) => {
   let emptyChild
   for (let key in node) {
